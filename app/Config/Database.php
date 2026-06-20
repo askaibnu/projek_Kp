@@ -24,13 +24,16 @@ class Database extends Config
      *
      * @var array<string, mixed>
      */
- public array $default = [
+public array $default = [
         'DSN'          => '',
+        
+        // 1. PASTIKAN HOSTNAME MENGGUNAKAN ALAMAT LENGKAP INI (Sesuai regional aws di screenshot pertama kamu)
         'hostname'     => 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com',
+        
         'username'     => '3D9meo1sLE7kttS.root',
         'password'     => 'YTZFLdMCyl3pIZdP',
         
-        // Kita arahkan ke database 'test' tempat kamu membuat tabel ci_sessions kemarin
+        // 2. KARENA DI SCHEMAS KAMU TERTULIS 'test', MAKA TETAP ISI 'test'
         'database'     => 'test', 
         
         'DBDriver'     => 'MySQLi',
@@ -46,7 +49,10 @@ class Database extends Config
         'compress'     => false,
         'strictOn'     => false,
         'failover'     => [],
-        'port'         => 4000,
+        
+        // 3. PASTIKAN PORT TETAP 4000
+        'port'         => 4000, 
+        
         'numberNative' => false,
         'foundRows'    => false,
         'dateFormat'   => [
