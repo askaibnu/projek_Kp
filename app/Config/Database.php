@@ -24,12 +24,15 @@ class Database extends Config
      *
      * @var array<string, mixed>
      */
-    public array $default = [
+ public array $default = [
         'DSN'          => '',
         'hostname'     => 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com',
         'username'     => '3D9meo1sLE7kttS.root',
         'password'     => 'YTZFLdMCyl3pIZdP',
-        'database'     => 'sys',
+        
+        // UBAH BAGIAN INI: Kosongkan nama databasenya agar diizinkan masuk dulu oleh TiDB
+        'database'     => '', 
+        
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
@@ -38,7 +41,7 @@ class Database extends Config
         'DBCollat'     => 'utf8mb4_general_ci',
         'swapPre'      => '',
         'encrypt'      => [
-            'ssl_verify' => false // Mematikan validasi file sertifikat lokal karena Vercel tidak punya filenya
+            'ssl_verify' => false
         ],
         'compress'     => false,
         'strictOn'     => false,
@@ -51,7 +54,6 @@ class Database extends Config
             'datetime' => 'Y-m-d H:i:s',
             'time'     => 'H:i:s',
         ],
-        // INI KUNCI UTAMANYA: Memaksa driver PHP MySQLi memakai flag SSL
         'clientFlags'  => MYSQLI_CLIENT_SSL, 
     ];
     //    /**
