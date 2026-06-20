@@ -24,15 +24,12 @@ class Database extends Config
      *
      * @var array<string, mixed>
      */
-
-public array $default = [
-        // KITA PAKAI JALUR DSN: Menyatukan username, password, host, port, dan nama database langsung
-        'DSN'          => 'mysql://3D9meo1sLE7kttS.root:YTZFLdMCyl3pIZdP@gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com:4000/test?ssl_verify_cert=false',
-        
-        'hostname'     => '',
-        'username'     => '',
-        'password'     => '',
-        'database'     => '',
+    public array $default = [
+        'DSN'          => '',
+        'hostname'     => getenv('DB_HOST') ?: 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com',
+        'username'     => getenv('DB_USER') ?: '3D9meotsLE7kttS.root',
+        'password'     => getenv('DB_PASS') ?: '',
+        'database'     => getenv('DB_NAME') ?: 'test',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
@@ -40,11 +37,13 @@ public array $default = [
         'charset'      => 'utf8mb4',
         'DBCollat'     => 'utf8mb4_general_ci',
         'swapPre'      => '',
-        'encrypt'      => false, // Dimatikan karena enkripsi sudah diatur langsung di dalam teks DSN di atas
+        'encrypt'      => [
+            'ssl_verify' => false,
+        ],
         'compress'     => false,
         'strictOn'     => false,
         'failover'     => [],
-        'port'         => 4000,
+        'port'         => (int) (getenv('DB_PORT') ?: 4000),
         'numberNative' => false,
         'foundRows'    => false,
         'dateFormat'   => [
@@ -53,6 +52,7 @@ public array $default = [
             'time'     => 'H:i:s',
         ],
     ];
+
     //    /**
     //     * Sample database connection for SQLite3.
     //     *
