@@ -41,7 +41,7 @@ class Database extends Config
         'compress'     => false,
         'strictOn'     => false,
         'failover'     => [],
-        'port'         => 3306,
+        'port'         => 4000,
         'numberNative' => false,
         'foundRows'    => false,
         'dateFormat'   => [
@@ -49,6 +49,7 @@ class Database extends Config
             'datetime' => 'Y-m-d H:i:s',
             'time'     => 'H:i:s',
         ],
+        'ssl_verify'   => true,
     ];
 
     //    /**
