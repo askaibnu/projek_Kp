@@ -27,15 +27,12 @@ class Database extends Config
 public array $default = [
         'DSN'          => '',
         
-        // 1. PASTIKAN HOSTNAME MENGGUNAKAN ALAMAT LENGKAP INI (Sesuai regional aws di screenshot pertama kamu)
-        'hostname'     => 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com',
+        // KUNCI UTAMANYA: Mengubah kata '.aws.' menjadi '.alicloud.' agar sesuai dengan cluster kamu
+        'hostname'     => 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com',
         
         'username'     => '3D9meo1sLE7kttS.root',
         'password'     => 'YTZFLdMCyl3pIZdP',
-        
-        // 2. KARENA DI SCHEMAS KAMU TERTULIS 'test', MAKA TETAP ISI 'test'
         'database'     => 'test', 
-        
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
@@ -49,10 +46,7 @@ public array $default = [
         'compress'     => false,
         'strictOn'     => false,
         'failover'     => [],
-        
-        // 3. PASTIKAN PORT TETAP 4000
         'port'         => 4000, 
-        
         'numberNative' => false,
         'foundRows'    => false,
         'dateFormat'   => [
