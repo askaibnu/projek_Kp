@@ -26,10 +26,10 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => '',
-        'password'     => '',
-        'database'     => '',
+        'hostname'     => 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com',
+        'username'     => '3D9meo1sLE7kttS.root',
+        'password'     => 'YTZFLdMCyl3pIZdP',
+        'database'     => 'sys',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
