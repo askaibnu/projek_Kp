@@ -30,8 +30,8 @@ class Database extends Config
         'username'     => '3D9meo1sLE7kttS.root',
         'password'     => 'YTZFLdMCyl3pIZdP',
         
-        // UBAH BAGIAN INI: Kosongkan nama databasenya agar diizinkan masuk dulu oleh TiDB
-        'database'     => '', 
+        // Kita arahkan ke database 'test' tempat kamu membuat tabel ci_sessions kemarin
+        'database'     => 'test', 
         
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
