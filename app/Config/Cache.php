@@ -153,7 +153,6 @@ public $handler = 'dummy';
         'wincache'  => WincacheHandler::class,
 
 
-        'array'     => \CodeIgniter\Cache\Handlers\ArrayHandler::class,
     
     ];
 
