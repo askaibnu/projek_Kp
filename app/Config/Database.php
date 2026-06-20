@@ -24,15 +24,15 @@ class Database extends Config
      *
      * @var array<string, mixed>
      */
+
 public array $default = [
-        'DSN'          => '',
+        // KITA PAKAI JALUR DSN: Menyatukan username, password, host, port, dan nama database langsung
+        'DSN'          => 'mysql://3D9meo1sLE7kttS.root:YTZFLdMCyl3pIZdP@gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com:4000/test?ssl_verify_cert=false',
         
-        // KUNCI UTAMANYA: Mengubah kata '.aws.' menjadi '.alicloud.' agar sesuai dengan cluster kamu
-        'hostname'     => 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com',
-        
-        'username'     => '3D9meo1sLE7kttS.root',
-        'password'     => 'YTZFLdMCyl3pIZdP',
-        'database'     => 'test', 
+        'hostname'     => '',
+        'username'     => '',
+        'password'     => '',
+        'database'     => '',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
@@ -40,13 +40,11 @@ public array $default = [
         'charset'      => 'utf8mb4',
         'DBCollat'     => 'utf8mb4_general_ci',
         'swapPre'      => '',
-        'encrypt'      => [
-            'ssl_verify' => false
-        ],
+        'encrypt'      => false, // Dimatikan karena enkripsi sudah diatur langsung di dalam teks DSN di atas
         'compress'     => false,
         'strictOn'     => false,
         'failover'     => [],
-        'port'         => 4000, 
+        'port'         => 4000,
         'numberNative' => false,
         'foundRows'    => false,
         'dateFormat'   => [
@@ -54,7 +52,6 @@ public array $default = [
             'datetime' => 'Y-m-d H:i:s',
             'time'     => 'H:i:s',
         ],
-        'clientFlags'  => MYSQLI_CLIENT_SSL, 
     ];
     //    /**
     //     * Sample database connection for SQLite3.
