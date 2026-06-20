@@ -47,7 +47,15 @@ class Exceptions extends BaseConfig
      * LOG PATH
      * --------------------------------------------------------------------------
      * The path to the directory where logs should be stored.
-     * Kita ganti ke /tmp/ khusus untuk server read-only Vercel.
      */
     public string $logPath = '/tmp/';
+
+    /**
+     * --------------------------------------------------------------------------
+     * LOGGING GROUP
+     * --------------------------------------------------------------------------
+     * This is the name of the log group that should be used for logging.
+     * (Variabel ini yang tadi sempat terlewat, Nu)
+     */
+    public string $log = 'log_exceptions';
 }
