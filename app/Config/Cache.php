@@ -151,6 +151,10 @@ public $handler = 'array';
         'predis'    => PredisHandler::class,
         'redis'     => RedisHandler::class,
         'wincache'  => WincacheHandler::class,
+
+
+        'array'     => \CodeIgniter\Cache\Handlers\ArrayHandler::class,
+    
     ];
 
     /**
