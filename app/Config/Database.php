@@ -37,7 +37,9 @@ class Database extends Config
         'charset'      => 'utf8mb4',
         'DBCollat'     => 'utf8mb4_general_ci',
         'swapPre'      => '',
-        'encrypt'      => true,
+        'encrypt'      => [
+            'ssl_verify' => false // Mematikan validasi file sertifikat lokal karena Vercel tidak punya filenya
+        ],
         'compress'     => false,
         'strictOn'     => false,
         'failover'     => [],
@@ -49,9 +51,9 @@ class Database extends Config
             'datetime' => 'Y-m-d H:i:s',
             'time'     => 'H:i:s',
         ],
-        'ssl_verify'   => true,
+        // INI KUNCI UTAMANYA: Memaksa driver PHP MySQLi memakai flag SSL
+        'clientFlags'  => MYSQLI_CLIENT_SSL, 
     ];
-
     //    /**
     //     * Sample database connection for SQLite3.
     //     *
